@@ -5,6 +5,7 @@ import com.afra.assessment.Models.TransactionModel;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
@@ -18,7 +19,7 @@ public interface ApiBuilder {
     Call<List<TransactionModel>> getPurchseAndSell();
 
     @POST("/api/createTransaction")
-    Call<List<TransactionModel>> makeTransaction();
+    Call<List<TransactionModel>> makeTransaction(@Body TransactionModel transactionModel);
 
     @PUT("/api/updateTransaction")
     Call<List<TransactionModel>> updateTransaction();

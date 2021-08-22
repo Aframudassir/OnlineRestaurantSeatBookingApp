@@ -19,4 +19,10 @@ public class TransactionViewModel extends ViewModel{
         transactionList = repository.getTransactionModel();
         return transactionList;
     }
+
+    public MutableLiveData<List<TransactionModel>> makeTransactions(TransactionModel transactionModel){
+        repository = new Repository();
+        transactionList = repository.makeTransactionModel(transactionModel);
+        return transactionList;
+    }
 }
